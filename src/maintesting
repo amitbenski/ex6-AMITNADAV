@@ -1,0 +1,19 @@
+package ex6Testing;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.ArrayList;
+
+public class TestMain {
+	
+	static ArrayList<String> fileLines;
+	
+	static ArrayList<Integer> scopeBracketLines = new ArrayList<Integer>();
+
+	private final static int FILE_PATH_INDEX = 0;
+
+	public static void main(String[] args) throws IOException {
+		File givenFile = new File(args[FILE_PATH_INDEX]);
+		fileLines = (ArrayList<String>) Files.readAllLines(givenFile.toPath(), Charset.defaultCharset());
